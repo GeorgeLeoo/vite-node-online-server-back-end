@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const { body, validationResult } = require("express-validator");
 const { signUp } = require("../service/users");
-const { validator, tool } = require("../middleware/validator");
+const { validator, tool } = require("../utils/validator");
 
 router.post("/sign-in", function (req, res, next) {
   res.send("respond with a resource");

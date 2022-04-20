@@ -4,7 +4,7 @@
  * @param {*} callback
  * @returns
  */
-const Response = require("../utils/response");
+const Response = require("../response");
 const tool = require("./tool");
 const toolKit = require("./toolKit");
 

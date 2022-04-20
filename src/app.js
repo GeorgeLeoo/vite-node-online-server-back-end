@@ -4,7 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-const validator = require("./middleware/validator");
+const validator = require("./utils/validator");
 
 const routesPlugin = require("./plugins/routes");
 var app = express();
