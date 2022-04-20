@@ -3,9 +3,6 @@ const { resolve } = require("path");
 
 module.exports = function (app) {
   routes.forEach((ele) => {
-    app.use(
-      ele.path,
-      require(resolve("./src/routes/modules", ele.name + ".js"))
-    );
+    app.use(ele.path, require(resolve("./src/controller", ele.name + ".js")));
   });
 };
