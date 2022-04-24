@@ -6,6 +6,6 @@ module.exports = {
     return res.status(200).json(data);
   },
   ERROR: (res, data = "ERROR") => {
-    return res.status(400).json(data);
+    return res.status(400).json({ errorMsg: data });
   },
 };

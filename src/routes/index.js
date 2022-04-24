@@ -7,4 +7,8 @@ module.exports = [
     path: "/users",
     name: "users",
   },
+  {
+    path: "/dbs",
+    name: "dbs",
+  },
 ];

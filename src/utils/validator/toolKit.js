@@ -1,30 +1,30 @@
 const { INVALID, TYPE_ERROR } = require("./typeError");
 
 const toolKit = {
-  notEmpty: function (req, res, key, errorMsg) {
-    if (!req.body[key]) {
+  notEmpty: function (req, res, location, param, errorMsg) {
+    if (!req[location][param]) {
       return {
-        location: "body",
+        location,
         msg: errorMsg || INVALID,
-        param: key,
+        param: param,
       };
     }
   },
-  trim: function (req, res, key, errorMsg) {
-    req.body[key] = req.body[key].trim();
+  trim: function (req, res, location, param, errorMsg) {
+    req[location][param] = req[location][param].trim();
   },
-  trimL: function (req, res, key, errorMsg) {
-    req.body[key] = req.body[key].trimLeft();
+  trimL: function (req, res, location, param, errorMsg) {
+    req[location][param] = req[location][param].trimLeft();
   },
-  trimR: function (req, res, key, errorMsg) {
-    req.body[key] = req.body[key].trimRight();
+  trimR: function (req, res, location, param, errorMsg) {
+    req[location][param] = req[location][param].trimRight();
   },
-  isString: function (req, res, key, errorMsg) {
-    if (typeof req.body[key] !== "string") {
+  isString: function (req, res, location, param, errorMsg) {
+    if (typeof req[location][param] !== "string") {
       return {
         location: "body",
         msg: errorMsg || TYPE_ERROR,
-        param: key,
+        param: param,
       };
     }
   },
